@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
+
   runApp(const MyApp());
 }
 
-final Uri _ary = Uri.parse('https://www.youtube.com/channel/UCMmpLL2ucRHAXbNHiCPyIyg');
+final Uri _ary =
+    Uri.parse('https://www.youtube.com/channel/UCMmpLL2ucRHAXbNHiCPyIyg');
 final Uri _92 = Uri.parse("https://m.youtube.com/@92newshdTv");
 final Uri _hum = Uri.parse('https://m.youtube.com/@HUMNewsPakistan');
 final Uri _public = Uri.parse('https://m.youtube.com/@PublicNewsPK');
 final Uri _gnn = Uri.parse('https://m.youtube.com/@gnnhdofficial');
 final Uri _ptv = Uri.parse('https://m.youtube.com/@PTVNewsOfficial');
-final Uri _samaa = Uri.parse('https://www.youtube.com/channel/UCJekW1Vj5fCVEGdye_mBN6Q');
+final Uri _samaa =
+    Uri.parse('https://www.youtube.com/channel/UCJekW1Vj5fCVEGdye_mBN6Q');
 final Uri _anews = Uri.parse('https://m.youtube.com/@ANewsGlobal');
 final Uri _bol = Uri.parse('https://m.youtube.com/@BOLNewsofficial');
 final Uri _skynews = Uri.parse('https://m.youtube.com/@SkyNews');
@@ -24,23 +27,24 @@ final Uri _express = Uri.parse('https://m.youtube.com/@ExpressNewspkofficial');
 final Uri _aaj = Uri.parse('https://m.youtube.com/@AajTVofficial');
 final Uri _ndtv = Uri.parse('https://m.youtube.com/@NDTV');
 
+final Uri _zalmiSports = Uri.parse(
+    'https://www.youtube.com/c/ZalmiSportsPK'); ////////////////////////
+final Uri _madni = Uri.parse(
+    'https://m.youtube.com/@MadaniChannelUrduLive'); /////////////////////////
+final Uri _qtv =
+    Uri.parse('https://m.youtube.com/@ARYQtvofficial'); ////////////////////
 
+final Uri _dunya =
+    Uri.parse('https://m.youtube.com/@DunyanewsOfficial'); ///////////////////
+final Uri _9sports =
+    Uri.parse('https://m.youtube.com/@ninesportsliven'); ////////////////
 
-final Uri _zalmiSports = Uri.parse('https://www.youtube.com/c/ZalmiSportsPK'); ////////////////////////
-final Uri _madni = Uri.parse('https://m.youtube.com/@MadaniChannelUrduLive');  /////////////////////////
-final Uri _qtv = Uri.parse('https://m.youtube.com/@ARYQtvofficial');  ////////////////////
+final Uri _national =
+    Uri.parse('https://m.youtube.com/@NatGeo'); ////////////////
 
-final Uri _dunya = Uri.parse('https://m.youtube.com/@DunyanewsOfficial');   ///////////////////
-final Uri _9sports = Uri.parse('https://m.youtube.com/@ninesportsliven');    ////////////////
-
-final Uri _national = Uri.parse('https://m.youtube.com/@NatGeo');    ////////////////
-
-final Uri _nbs = Uri.parse('https://m.youtube.com/@NBCNews');    ////////////////
-final Uri _suno = Uri.parse('https://m.youtube.com/@SUNONewsHD');    ////////////////
-
-
-
-
+final Uri _nbs = Uri.parse('https://m.youtube.com/@NBCNews'); ////////////////
+final Uri _suno =
+    Uri.parse('https://m.youtube.com/@SUNONewsHD'); ////////////////
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -69,7 +73,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    double Width = MediaQuery.of(context).size.width;
+    // double Width = MediaQuery.of(context).size.width;
     double Height = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -89,69 +93,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_ary);
-                    },
-                    child: const Text(
-                      'ARY',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_92);
-                    },
-                    child: const Text(
-                      '92',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_hum);
-                    },
-                    child: const Text(
-                      'Hum',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
+                ManualButton(link: _ary, name: "ARY"),
+                ManualButton(link: _92, name: "92"),
+                ManualButton(link: _hum, name: "Hum"),
               ],
             ),
 
@@ -164,69 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_public);
-                    },
-                    child: const Text(
-                      'Public',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_gnn);
-                    },
-                    child: const Text(
-                      'GNN',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_ptv);
-                    },
-                    child: const Text(
-                      'PTV',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
+                ManualButton(link: _public, name: "Public"),
+                ManualButton(link: _gnn, name: "GNN"),
+                ManualButton(link: _ptv, name: "PTV"),
               ],
             ),
 
@@ -239,69 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_samaa);
-                    },
-                    child: const Text(
-                      'Samaa',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_anews);
-                    },
-                    child: const Text(
-                      'A News',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_bol);
-                    },
-                    child: const Text(
-                      'Bol',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
+                ManualButton(link: _samaa, name: "Samaa"),
+                ManualButton(link: _anews, name: "A News"),
+                ManualButton(link: _bol, name: "Bol"),
               ],
             ),
 
@@ -314,69 +138,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_skynews);
-                    },
-                    child: const Text(
-                      'Sky',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_9news);
-                    },
-                    child: const Text(
-                      '9 News',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_dw);
-                    },
-                    child: const Text(
-                      'DW',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
+                ManualButton(link: _skynews, name: "Sky"),
+                ManualButton(link: _9news, name: "9 News"),
+                ManualButton(link: _dw, name: "DW"),
               ],
             ),
 
@@ -389,69 +153,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.08,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_zalmiSports);
-                    },
-                    child: const Text(
-                      'Zalmi Sports',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.09,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_ptvsports);
-                    },
-                    child: const Text(
-                      'PTV Sports',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_9sports);
-                    },
-                    child: const Text(
-                      '9 Sports',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
+                ManualButton(link: _zalmiSports, name: "Zalmi Sports"),
+                ManualButton(link: _ptvsports, name: "PTV Sports"),
+                ManualButton(link: _9sports, name: "9 Sports"),
               ],
             ),
 
@@ -464,69 +168,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_national);
-                    },
-                    child: const Text(
-                      'NGC',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_aljazira);
-                    },
-                    child: const Text(
-                      'AlJazira',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_qtv);
-                    },
-                    child: const Text(
-                      'QTV',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
+                ManualButton(link: _national, name: "NGC"),
+                ManualButton(link: _aljazira, name: "AlJazira"),
+                ManualButton(link: _qtv, name: "QTV"),
               ],
             ),
 
@@ -539,74 +183,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_aaj);
-                    },
-                    child: const Text(
-                      'Aaj',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_express);
-                    },
-                    child: const Text(
-                      'Express',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_madni);
-                    },
-                    child: const Text(
-                      'Madni',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ),
+                ManualButton(link: _aaj, name: "Aaj"),
+                ManualButton(link: _express, name: "Express"),
+                ManualButton(link: _madni, name: "Madni"),
               ],
             ),
-
-
-
 
             ///==================================================== r8
 
@@ -617,54 +198,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_ndtv);
-                    },
-                    child: const Text(
-                      'NDTV',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_dunya);
-                    },
-                    child: const Text(
-                      'Dunya',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-
+                ManualButton(link: _ndtv, name: "NDTV"),
+                ManualButton(link: _dunya, name: "Dunya"),
               ],
             ),
-
-
-
 
             SizedBox(
               height: Height * 0.02,
@@ -673,66 +210,53 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_nbs);
-                    },
-                    child: const Text(
-                      'NBS',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: Width * 0.25,
-                  height: Height * 0.07,
-                  child: TextButton(
-                    onPressed: () async {
-                      await _launchUrl(_suno);
-                    },
-                    child: const Text(
-                      'Suno',
-                      style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontFamily: 'Comforta',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                  ),
-                ),
-
+                ManualButton(link: _nbs, name: "NBS"),
+                ManualButton(link: _suno, name: "Suno"),
               ],
             ),
-
-
-
-
-
-
           ],
         ),
       ),
 
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class ManualButton extends StatefulWidget {
+  ManualButton({Key? key, required this.link, required this.name})
+      : super(key: key);
+  final Uri link;
+  final String name;
+
+  @override
+  State<ManualButton> createState() => _ManualButtonState();
+}
+
+class _ManualButtonState extends State<ManualButton> {
+  @override
+  Widget build(BuildContext context) {
+    double Width = MediaQuery.of(context).size.width;
+    double Height = MediaQuery.of(context).size.height;
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      width: Width * 0.25,
+      height: Height * 0.07,
+      child: TextButton(
+        onPressed: () async {
+          await _launchUrl(widget.link);
+        },
+        child: Text(
+          widget.name,
+          style: TextStyle(
+              color: Colors.deepPurpleAccent,
+              fontFamily: 'Comforta',
+              fontWeight: FontWeight.bold,
+              fontSize: 20),
+        ),
+      ),
     );
   }
 
